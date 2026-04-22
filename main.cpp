@@ -1,15 +1,18 @@
 #include <iostream>
 
-// Рекурсивная функция с началом (0, 1)
-int fib(int n) {
-    if (n == 0)
-        return 0;
-    if (n == 1)
-        return 1;
-    return fib(n - 1) + fib(n - 2);
+// Выводит первые n чисел Фибоначчи (начиная с 0)
+void printFib(int n) {
+    int a = 0, b = 1, next;
+    for (int i = 0; i < n; ++i) {
+        std::cout << a << std::endl;
+        next = a + b;
+        a = b;
+        b = next;
+    }
 }
 
 int main() {
-    std::cout << fib(10) << std::endl;
+    printFib(10);
     return 0;
 }
+
